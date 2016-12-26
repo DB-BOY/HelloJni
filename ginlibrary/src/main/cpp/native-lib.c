@@ -1,9 +1,9 @@
-#include "../../../../../../Library/Android/sdk/ndk-bundle/platforms/android-14/arch-mips/usr/include/stdio.h"
-#include "../../../../../../Library/Android/sdk/ndk-bundle/platforms/android-14/arch-mips/usr/include/jni.h"
-#include "../../../../../../Library/Android/sdk/ndk-bundle/platforms/android-14/arch-mips/usr/include/android/log.h"
-#include "../../../../../../Library/Android/sdk/ndk-bundle/platforms/android-14/arch-mips/usr/include/stdlib.h"
+#include "stdio.h"
+#include "jni.h"
+#include "android/log.h"
+#include "stdlib.h"
 #include "md5.h"
-#include "../../../../../../Library/Android/sdk/ndk-bundle/platforms/android-14/arch-mips/usr/include/string.h"
+#include "string.h"
 
 #define LOG    "-----wang.lichen" // 这个是自定义的LOG的标识
 #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO,LOG, __VA_ARGS__))

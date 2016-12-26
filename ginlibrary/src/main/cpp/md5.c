@@ -3,7 +3,7 @@
 //
 
 #include "md5.h" 
-#include "../../../../../../Library/Android/sdk/ndk-bundle/platforms/android-14/arch-mips/usr/include/string.h"
+#include "string.h"
 unsigned char PADDING[]={0x80,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
                          0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
                          0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
