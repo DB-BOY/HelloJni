@@ -1,35 +1,41 @@
 package com.gin.hellojni;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-    EditText et;
+import com.gin.hellojni.activity.FileActivity;
+import com.gin.hellojni.activity.MD5Activity;
+
+public class MainActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        View view = findViewById(R.id.iview);
 
-    final TextView tv = (TextView) findViewById(R.id.sample_text);
-        et = (EditText) findViewById(R.id.edit);
-        Button btn = (Button) findViewById(R.id.btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String md =et.getText().toString();
-                if(TextUtils.isEmpty(md)){
-                    return ;
-                }
-                
-                String result = Utils.getMD5(md);
-                tv.setText(result);
-            }
-        });
+        view.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+    }
+
+
+    public void click(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.md5:
+                intent = MD5Activity.getIntent(MainActivity.this);
+                break;
+
+            case R.id.file:
+                intent = FileActivity.getIntent(MainActivity.this);
+                break;
+            default:
+                intent = MD5Activity.getIntent(MainActivity.this);
+                break;
+
+        }
+        startActivity(intent);
     }
 
 }

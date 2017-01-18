@@ -1,4 +1,4 @@
-package com.gin.hellojni;
+package com.gin.hellojni.tools;
 
 import com.gin.lib.tools.StrUtils;
 
