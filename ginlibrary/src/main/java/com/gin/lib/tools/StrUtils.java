@@ -1,5 +1,7 @@
 package com.gin.lib.tools;
 
+import java.io.File;
+
 /**
  * Created by wang.lichen on 2016/12/26.
  */
@@ -15,6 +17,12 @@ public class StrUtils {
 
 
     /**
+     * 禁止构造
+     */
+    private StrUtils() {
+    }
+
+    /**
      * 获得单例
      *
      * @return
@@ -23,19 +31,16 @@ public class StrUtils {
         return InstanceHolder.INSTANCE;
     }
 
+    public native String getMD5(String md);
+
+    public native File openFileFromC(String path);
+
+    public native int copeFile(String oldPath, String newPath);
+    
     /**
      * 单例持有器
      */
     private static final class InstanceHolder {
         private static final StrUtils INSTANCE = new StrUtils();
     }
-
-    /**
-     * 禁止构造
-     */
-    private StrUtils() {
-    }
-    
-    public native String getMD5(String md);
-    
 }
